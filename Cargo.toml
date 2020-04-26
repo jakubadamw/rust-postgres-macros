@@ -1,16 +1,26 @@
 [package]
 name = "postgres_macros"
-authors = ["Steven Fackler <sfackler@gmail.com>"]
-version = "0.1.13"
+authors = [
+    "Steven Fackler <sfackler@gmail.com>",
+    "Jakub Wieczorek <jakub.adam.wieczorek@gmail.com>"
+]
+version = "0.2.0"
+edition = "2018"
 license = "MIT/Apache-2.0"
 description = "A set of support macros for rust-postgres"
-repository = "https://github.com/sfackler/rust-postgres-macros"
+repository = "https://github.com/jakubadamw/rust-postgres-macros"
 
 build = "build.rs"
 
+[dependencies]
+libc = "0.2"
+proc-macro2 = "1.0"
+quote = "1.0"
+syn = "1.0"
+
 [lib]
-plugin = true
+proc-macro = true
 test = false
 
 [dev-dependencies]
-compiletest_rs = "0.2"
+compiletest_rs = "0.5"

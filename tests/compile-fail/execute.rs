@@ -1,5 +1,10 @@
-#![feature(plugin)]
-#![plugin(postgres_macros)]
+#![feature(proc_macro_hygiene)]
+
+// ignore-test
+
+extern crate postgres_macros;
+
+use postgres_macros::execute;
 
 struct Connection;
 

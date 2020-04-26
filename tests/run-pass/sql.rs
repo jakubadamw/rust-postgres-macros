@@ -1,5 +1,8 @@
-#![feature(plugin)]
-#![plugin(postgres_macros)]
+#![feature(proc_macro_hygiene)]
+
+extern crate postgres_macros;
+
+use postgres_macros::sql;
 
 fn main() {
     let s = sql!("SELECT foo FROM bar");
