@@ -7,7 +7,7 @@ fn main() {
         .stdout(Stdio::inherit())
         .stderr(Stdio::inherit())
         .status()
-        .unwrap();
+        .expect("make missing on the system");
     assert!(ret.success());
     let out_dir = env::var("OUT_DIR").unwrap();
     println!("cargo:rustc-flags=-L {} -l static=parser", out_dir);
